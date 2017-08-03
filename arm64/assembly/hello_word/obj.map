@@ -1,0 +1,118 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD main.o
+LOAD start.o
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../aarch64-linux-gnu/libc/usr/lib/aarch64-linux-gnu/libc.so
+START GROUP
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../aarch64-linux-gnu/libc/lib/aarch64-linux-gnu/libc.so.6
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../aarch64-linux-gnu/libc/usr/lib/aarch64-linux-gnu/libc_nonshared.a
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../aarch64-linux-gnu/libc/lib/ld-linux-aarch64.so.1
+END GROUP
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../lib/gcc/aarch64-linux-gnu/4.9.1/libgcc.a
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../lib/gcc/aarch64-linux-gnu/4.9.1/../../../../aarch64-linux-gnu/lib/libgcc_s.so
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../aarch64-linux-gnu/libc/usr/lib/aarch64-linux-gnu/libc.so
+START GROUP
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../aarch64-linux-gnu/libc/lib/aarch64-linux-gnu/libc.so.6
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../aarch64-linux-gnu/libc/usr/lib/aarch64-linux-gnu/libc_nonshared.a
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../aarch64-linux-gnu/libc/lib/ld-linux-aarch64.so.1
+END GROUP
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../lib/gcc/aarch64-linux-gnu/4.9.1/libgcc.a
+LOAD /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../lib/gcc/aarch64-linux-gnu/4.9.1/../../../../aarch64-linux-gnu/lib/libgcc_s.so
+                0x0000000049000000                . = 0x49000000
+
+.note.gnu.build-id
+                0x0000000049000000       0x24
+ .note.gnu.build-id
+                0x0000000049000000       0x24 linker stubs
+
+.text           0x0000000049000028      0x2f0
+ *(.test)
+ .text          0x0000000049000028      0x1e0 main.o
+                0x0000000049000028                data_format
+                0x00000000490000c0                data_format8
+                0x00000000490000e0                data_format16
+                0x0000000049000100                data_format32
+                0x0000000049000120                print
+                0x0000000049000170                put_char
+                0x00000000490001b4                test1
+                0x00000000490001f4                test
+ .text          0x0000000049000208      0x110 start.o
+                0x0000000049000208                _start
+
+.interp         0x0000000049000318       0x1b
+ .interp        0x0000000049000318       0x1b main.o
+
+.gnu.version_d  0x0000000049000338        0x0
+ .gnu.version_d
+                0x0000000000000000        0x0 main.o
+
+.gnu.version    0x0000000049000334        0x0
+ .gnu.version   0x0000000000000000        0x0 main.o
+
+.gnu.version_r  0x0000000049000338        0x0
+ .gnu.version_r
+                0x0000000000000000        0x0 main.o
+
+.dynsym         0x0000000049000338        0x0
+ .dynsym        0x0000000049000338        0x0 main.o
+
+.dynstr         0x0000000049000338        0xb
+ .dynstr        0x0000000049000338        0xb main.o
+
+.hash           0x0000000049000348        0xc
+ .hash          0x0000000049000348        0xc main.o
+
+.eh_frame_hdr   0x0000000049000354        0x0
+ .eh_frame_hdr  0x0000000000000000        0x0 /home/wrsadmin/bin/gcc-linaro-aarch64-linux-gnu-4.9-2014.07_linux/bin/../lib/gcc/aarch64-linux-gnu/4.9.1/../../../../aarch64-linux-gnu/lib/libgcc_s.so
+
+.iplt           0x0000000049000354        0x0
+ .iplt          0x0000000000000000        0x0 main.o
+
+.plt            0x0000000049000354        0x0
+ .plt           0x0000000000000000        0x0 main.o
+
+.rela.dyn       0x0000000049000358        0x0
+ .rela.iplt     0x0000000000000000        0x0 main.o
+ .rela.got      0x0000000000000000        0x0 main.o
+ .rela.plt      0x0000000000000000        0x0 main.o
+ .rela.bss      0x0000000000000000        0x0 main.o
+
+.data           0x0000000049000354        0xc
+ *(.data)
+ .data          0x0000000049000354        0x0 main.o
+ .data          0x0000000049000354        0xc start.o
+                0x0000000049000360                _bss_start = .
+
+.igot.plt       0x0000000049000360        0x0
+ .igot.plt      0x0000000000000000        0x0 main.o
+
+.dynamic        0x0000000049000360       0xd0
+ .dynamic       0x0000000049000360       0xd0 main.o
+                0x0000000049000360                _DYNAMIC
+
+.got            0x0000000049000430        0x8
+ .got           0x0000000049000430        0x8 main.o
+                0x0000000049000430                _GLOBAL_OFFSET_TABLE_
+
+.got.plt        0x0000000049000438       0x18
+ .got.plt       0x0000000049000438       0x18 main.o
+
+.bss            0x0000000049000450        0x0
+ *(.bss)
+ .bss           0x0000000049000450        0x0 main.o
+ .bss           0x0000000049000450        0x0 start.o
+                0x0000000049000450                _bss_end = .
+OUTPUT(a.out elf64-littleaarch64)
+
+.dynbss         0x0000000049000450        0x0
+ .dynbss        0x0000000000000000        0x0 main.o
+
+.comment        0x0000000000000000       0x63
+ .comment       0x0000000000000000       0x63 main.o
+                                         0x64 (size before relaxing)
